@@ -97,7 +97,7 @@
 <div class="intrude-less">
     <header id="header" class="inner">
         <a href="/" class="profilepic">
-            <img src="/img/avatar.png" class="animated zoomIn">
+            <img src="/img/niconico.png" class="animated zoomIn">
         </a>
         <hgroup>
           <h1 class="header-author"><a href="/"></a></h1>
@@ -205,7 +205,7 @@
                 
                 <section class="switch-part switch-part4">
                 
-                    <div id="js-aboutme">专注于前端</div>
+                    <div id="js-aboutme">nothing</div>
                 </section>
                 
             </div>
@@ -222,7 +222,7 @@
     <div class="intrude-less">
         <header id="header" class="inner">
             <a href="/" class="profilepic">
-                <img src="/img/avatar.png" class="animated zoomIn">
+                <img src="/img/niconico.png" class="animated zoomIn">
             </a>
             <hgroup>
               <h1 class="header-author"><a href="/" title="回到主页"></a></h1>
@@ -456,7 +456,7 @@
                 $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
             }
             else {
-                var backgroundnum = 5;
+                var backgroundnum = 2;
                 var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
                 $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
             }
@@ -477,14 +477,14 @@
     
         var oOpenInNew = {
             
+             title: "a.article-title, .article-more-link a", 
             
             
-            
-            
-            
+             categories: ".article-category a, a.tag-list-link", 
+             articleNav: "#article-nav a, #post-nav-button a", 
              archives: ".archive-article-title", 
              miniArchives: "a.post-list-link", 
-            
+             menu: ".header-menu a", 
              friends: "#js-friends a", 
              socail: ".social a" 
         }
@@ -493,6 +493,23 @@
         }
     
 </script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "(つェ⊂) 我藏好了哦~ " + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "(*´∇｀*) 被你发现啦~ " + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
